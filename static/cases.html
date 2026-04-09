@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cases | Umoor Qaza Saifee Nagar</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="cases">
+  <div class="app-shell app-layout">
+    <aside class="sidebar">
+      <div>
+        <p class="eyebrow">Umoor Qaza</p>
+        <h2 class="sidebar-title">Saifee Nagar</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="/dashboard.html">Dashboard</a>
+        <a class="nav-link" href="/cases.html">Cases</a>
+        <a class="nav-link" href="/analytics.html">Analytics</a>
+        <a class="nav-link" href="/settings.html">Settings</a>
+      </nav>
+      <div class="sidebar-foot">
+        <div id="userBadge" class="user-badge"></div>
+        <button id="logoutBtn" class="ghost-btn" type="button">Logout</button>
+      </div>
+    </aside>
+
+    <main class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Operations</p>
+          <h1>Cases</h1>
+        </div>
+        <button id="newCaseBtn" class="primary-btn" type="button">New Case</button>
+      </header>
+
+      <section class="panel filters-panel">
+        <div class="section-head">
+          <h3>Case Filters</h3>
+          <button id="clearFiltersBtn" class="text-btn" type="button">Clear</button>
+        </div>
+        <form id="filtersForm" class="filters-grid">
+          <label>Search<input type="text" name="search" placeholder="Case ID, party, summary"></label>
+          <label>Assignee<input type="text" name="assignee" placeholder="Assignee"></label>
+          <label>Case Type<select name="case_type"></select></label>
+          <label>Status<select name="status"></select></label>
+          <label>Priority<select name="priority"></select></label>
+          <label>Due From<input type="date" name="due_date_from"></label>
+          <label>Due To<input type="date" name="due_date_to"></label>
+          <label>Start From<input type="date" name="start_date_from"></label>
+          <label>Start To<input type="date" name="start_date_to"></label>
+          <label>Completion From<input type="date" name="completed_date_from"></label>
+          <label>Completion To<input type="date" name="completed_date_to"></label>
+        </form>
+      </section>
+
+      <section class="two-up-grid wide-left">
+        <section class="panel table-panel">
+          <div class="section-head">
+            <h3>Case Register</h3>
+            <span class="muted">Select a row to open the workspace</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Case ID</th>
+                  <th>Applicant</th>
+                  <th>Complainant</th>
+                  <th>Respondent</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Assignee</th>
+                  <th>Due</th>
+                  <th>Priority</th>
+                </tr>
+              </thead>
+              <tbody id="casesTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel detail-panel">
+          <div class="section-head">
+            <h3>Case Workspace</h3>
+            <span id="detailHint" class="muted">Select a case to view details.</span>
+          </div>
+          <form id="caseForm" class="case-form">
+            <input type="hidden" name="id">
+            <div class="form-grid">
+              <label>Case ID<input type="text" name="case_id" required></label>
+              <label>Applicant<input type="text" name="applicant" required></label>
+              <label>Complainant<input type="text" name="complainant" required></label>
+              <label>Respondent<input type="text" name="respondent" required></label>
+              <label>Case Type<select name="case_type" required></select></label>
+              <label>Status<select name="status" required></select></label>
+              <label>Created Date<input type="date" name="created_date" required></label>
+              <label>Start Date<input type="date" name="start_date"></label>
+              <label>Documents Link<input type="url" name="documents_link" placeholder="https://"></label>
+              <label>Due Date<input type="date" name="due_date"></label>
+              <label>Completed Date<input type="date" name="completed_date"></label>
+              <label>Assignee<input type="text" name="assignee"></label>
+              <label>Priority<select name="priority" required></select></label>
+              <label class="summary-field">Summary<textarea name="summary" rows="4" required></textarea></label>
+            </div>
+            <div class="form-actions">
+              <button type="submit" id="saveCaseBtn" class="primary-btn">Save Case</button>
+              <p id="caseFormMessage" class="muted"></p>
+            </div>
+          </form>
+
+          <div class="split-panel">
+            <section>
+              <div class="section-head"><h4>Comments / Notes</h4></div>
+              <form id="commentForm" class="stack-form">
+                <textarea name="body" rows="3" placeholder="Add a note"></textarea>
+                <button type="submit" class="ghost-btn">Add Comment</button>
+              </form>
+              <div id="commentsList" class="feed-list"></div>
+            </section>
+            <section>
+              <div class="section-head"><h4>Subtasks</h4></div>
+              <form id="subtaskForm" class="subtask-form">
+                <input type="text" name="title" placeholder="Task title">
+                <input type="date" name="due_date">
+                <input type="text" name="assignee" placeholder="Assignee">
+                <button type="submit" class="ghost-btn">Add Task</button>
+              </form>
+              <div id="subtasksList" class="feed-list"></div>
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics | Umoor Qaza Saifee Nagar</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="analytics">
+  <div class="app-shell app-layout">
+    <aside class="sidebar">
+      <div>
+        <p class="eyebrow">Umoor Qaza</p>
+        <h2 class="sidebar-title">Saifee Nagar</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="/dashboard.html">Dashboard</a>
+        <a class="nav-link" href="/cases.html">Cases</a>
+        <a class="nav-link" href="/analytics.html">Analytics</a>
+        <a class="nav-link" href="/settings.html">Settings</a>
+      </nav>
+      <div class="sidebar-foot">
+        <div id="userBadge" class="user-badge"></div>
+        <button id="logoutBtn" class="ghost-btn" type="button">Logout</button>
+      </div>
+    </aside>
+
+    <main class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Reporting</p>
+          <h1>Analytics</h1>
+        </div>
+        <button id="exportBtn" class="primary-btn" type="button">Export CSV</button>
+      </header>
+
+      <section class="panel filters-panel">
+        <div class="section-head">
+          <h3>Slice Data</h3>
+          <button id="clearFiltersBtn" class="text-btn" type="button">Clear</button>
+        </div>
+        <form id="filtersForm" class="filters-grid">
+          <label>Search<input type="text" name="search" placeholder="Case ID, party, summary"></label>
+          <label>Assignee<input type="text" name="assignee" placeholder="Assignee"></label>
+          <label>Case Type<select name="case_type"></select></label>
+          <label>Status<select name="status"></select></label>
+          <label>Priority<select name="priority"></select></label>
+          <label>Due From<input type="date" name="due_date_from"></label>
+          <label>Due To<input type="date" name="due_date_to"></label>
+          <label>Start From<input type="date" name="start_date_from"></label>
+          <label>Start To<input type="date" name="start_date_to"></label>
+          <label>Completion From<input type="date" name="completed_date_from"></label>
+          <label>Completion To<input type="date" name="completed_date_to"></label>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <h3>Live charts</h3>
+          <div id="metricGrid" class="mini-metric-grid"></div>
+        </div>
+        <div class="chart-grid">
+          <div class="chart-card"><h4>Status Mix</h4><div id="statusChart" class="donut-chart"></div></div>
+          <div class="chart-card"><h4>Cases by Type</h4><div id="typeChart" class="bar-chart"></div></div>
+          <div class="chart-card"><h4>Assignee Load</h4><div id="assigneeChart" class="bar-chart"></div></div>
+          <div class="chart-card"><h4>Priority Spread</h4><div id="priorityChart" class="bar-chart"></div></div>
+          <div class="chart-card full-width"><h4>Case Starts by Month</h4><div id="timelineChart" class="timeline-chart"></div></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

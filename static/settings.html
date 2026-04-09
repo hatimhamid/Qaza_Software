@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | Umoor Qaza Saifee Nagar</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="settings">
+  <div class="app-shell app-layout">
+    <aside class="sidebar">
+      <div>
+        <p class="eyebrow">Umoor Qaza</p>
+        <h2 class="sidebar-title">Saifee Nagar</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="/dashboard.html">Dashboard</a>
+        <a class="nav-link" href="/cases.html">Cases</a>
+        <a class="nav-link" href="/analytics.html">Analytics</a>
+        <a class="nav-link" href="/settings.html">Settings</a>
+      </nav>
+      <div class="sidebar-foot">
+        <div id="userBadge" class="user-badge"></div>
+        <button id="logoutBtn" class="ghost-btn" type="button">Logout</button>
+      </div>
+    </aside>
+
+    <main class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Administration</p>
+          <h1>Settings</h1>
+        </div>
+      </header>
+
+      <section class="two-up-grid">
+        <section class="panel">
+          <div class="section-head">
+            <h3>Roles</h3>
+            <span class="muted">Permission model</span>
+          </div>
+          <div class="feed-list">
+            <article class="feed-card"><div><p><strong>Admin</strong></p><small class="muted">Can access settings and create or edit cases.</small></div></article>
+            <article class="feed-card"><div><p><strong>Editor</strong></p><small class="muted">Can create and edit cases, comments, and subtasks.</small></div></article>
+            <article class="feed-card"><div><p><strong>Viewer</strong></p><small class="muted">Read-only access to dashboards, analytics, and cases.</small></div></article>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <h3>System info</h3>
+            <span class="muted">Current workspace snapshot</span>
+          </div>
+          <div id="settingsMeta" class="feed-list"></div>
+        </section>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <h3>User directory</h3>
+          <span class="muted">Accounts present in the database</span>
+        </div>
+        <div id="usersList" class="feed-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

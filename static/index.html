@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umoor Qaza Saifee Nagar</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="login">
+  <div class="app-shell">
+    <section class="login-view">
+      <div class="login-card">
+        <p class="eyebrow">Community Mediation Center</p>
+        <h1>Umoor Qaza Saifee Nagar</h1>
+        <p class="muted">A secure case management workspace for mediation intake, progress tracking, analytics, and follow-ups.</p>
+        <form id="loginForm" class="login-form">
+          <label>Username<input type="text" name="username" placeholder="admin" required></label>
+          <label>Password<input type="password" name="password" placeholder="Enter password" required></label>
+          <button type="submit" class="primary-btn">Sign In</button>
+          <p id="loginError" class="error-text"></p>
+        </form>
+        <div id="sessionNotice" class="demo-credentials hidden">
+          <strong>Session detected</strong>
+          <span id="sessionUserText"></span>
+          <div class="inline-actions">
+            <button id="continueBtn" class="ghost-btn" type="button">Continue to App</button>
+            <button id="signOutBtn" class="ghost-btn" type="button">Sign Out</button>
+          </div>
+        </div>
+        <div class="demo-credentials">
+          <strong>Seed users</strong>
+          <span>admin / admin123</span>
+          <span>editor / editor123</span>
+          <span>viewer / viewer123</span>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
