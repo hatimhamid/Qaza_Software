@@ -1,4 +1,4 @@
-# Umoor Qaza Saifee Nagar
+# Umoor Qaza Software
 
 Responsive web case management for a community mediation center, backed directly by SQLite and served through Python.
 
